@@ -2,7 +2,7 @@
 Category.create([{title: 'HTML'}, {title: 'CSS'},
                  {title: 'JavaScript'}, {title: 'jQuery'}, {title: 'Ruby'}])
 
-User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name,
+admin = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name,
             email: Faker::Internet.email, admin: true)
 
 5.times do
@@ -11,15 +11,15 @@ User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name
 end
 
 Test.create([
-    {title: 'HTML Test1', category_id: 1},
-    {title: 'CSS Test1', category_id: 2},
-    {title: 'CSS Test2', category_id: 2, level: 1},
-    {title: 'CSS Test3', category_id: 2, level: 1},
-    {title: 'jQuery Test1', category_id: 4},
-    {title: 'jQuery Test2', category_id: 4, level: 1},
-    {title: 'HTML Test2', category_id: 1, level: 1},
-    {title: 'Javascript Test3', category_id: 3, level: 3},
-    {title: 'Javascript Test2', category_id: 3, level: 2}])
+    {title: 'HTML Test1', category_id: 1, author_id: admin.id},
+    {title: 'CSS Test1', category_id: 2, author_id: admin.id},
+    {title: 'CSS Test2', category_id: 2, level: 1, author_id: admin.id},
+    {title: 'CSS Test3', category_id: 2, level: 1, author_id: admin.id},
+    {title: 'jQuery Test1', category_id: 4, author_id: admin.id},
+    {title: 'jQuery Test2', category_id: 4, level: 1, author_id: admin.id},
+    {title: 'HTML Test2', category_id: 1, level: 1, author_id: admin.id},
+    {title: 'Javascript Test3', category_id: 3, level: 3, author_id: admin.id},
+    {title: 'Javascript Test2', category_id: 3, level: 2, author_id: admin.id}])
 
 10.times do
   id = Faker::Number.between(from: Test.first[:id], to: Test.last[:id])
