@@ -1,0 +1,12 @@
+<h2>Create New Question</h2>
+
+<form action="/tests/<%= @test.id %>/questions" method="post">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <p>
+    <label for="question-body">Question text:</label>
+    <input type="text" id="question-body" name="question[body]">
+  </p>
+  <p>
+    <input type="submit" value="Create">
+  </p>
+</form>
