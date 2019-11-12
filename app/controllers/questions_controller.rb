@@ -18,8 +18,12 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = @test.questions.create(body: question_params[:body])
-    render plain: @question.inspect
+    @question = @test.questions.create(question_params)
+    if @question.save
+      redirect_to @question
+    else
+      render plain: @question.inspect
+    end
   end
 
   def destroy
