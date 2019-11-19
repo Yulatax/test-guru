@@ -18,9 +18,9 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(question_params)
+    @question = @test.questions.new(question_params)
 
-    if @test.questions.push(@question)
+    if @question.save
       redirect_to @question
     else
       render :new
