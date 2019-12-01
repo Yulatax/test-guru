@@ -1,0 +1,6 @@
+<h1>The <%= @test_passage.test.title %> Test was Completed!</h1>
+
+<h3>Your result is: <span class=<%= @result[:class] %>><%= @result[:score] %>%</span></h3>
+<h4><%= show_message(@result[:class]) %></h4>
+
+<p><%= link_to 'To All Tests', tests_path %></p>
