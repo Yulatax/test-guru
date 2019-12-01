@@ -1,4 +1,6 @@
 class TestPassage < ApplicationRecord
+  SUCCESS_SCORE = 85
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
@@ -17,11 +19,12 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
-  def result
-    {
-        score: calculate_score,
-        class: result_type(@score)
-    }
+  def calculate_score
+    (self.correct_questions.to_f / test.questions.count * 100).round(2)
+  end
+
+  def success?
+    calculate_score >= SUCCESS_SCORE ? 'success' : 'failure'
   end
 
   def current_question_number
@@ -52,13 +55,4 @@ class TestPassage < ApplicationRecord
   def before_validation_set_next_question
     self.current_question = next_question
   end
-
-  def calculate_score
-    @score = (self.correct_questions.to_f / test.questions.count * 100).round(2)
-  end
-
-  def result_type(result)
-    result >= 85 ? 'success' : 'failure'
-  end
-
 end
