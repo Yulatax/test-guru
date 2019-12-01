@@ -8,7 +8,8 @@ class TestPassagesController < ApplicationController
   end
 
   def result
-    @result = @test_passage.result
+    @score = @test_passage.calculate_score
+    @class = @test_passage.success?
   end
 
   def update
