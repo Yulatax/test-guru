@@ -1,0 +1,10 @@
+<nav>
+  <% if logged_in? %>
+    <div>Welcome, <b><%= current_user.first_name %></b> Guru</div>
+    <div><%= link_to "Sign out", signout_path %></div>
+  <% else %>
+    <div>Welcome, to <b><%= link_to "TestGuru", root_path %></b></div>
+    <div><%= link_to "Sign in", login_path %></div>
+    <div><%= link_to "Register", signup_path %></div>
+  <% end %>
+</nav>

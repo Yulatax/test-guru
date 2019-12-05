@@ -1,5 +1,6 @@
 class TestPassagesController < ApplicationController
 
+  before_action :authenticate_user!
   before_action :set_test_passage, only: %i[show update result]
   before_action :set_current_question_number, only: :show
 

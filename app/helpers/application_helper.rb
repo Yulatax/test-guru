@@ -9,4 +9,5 @@ module ApplicationHelper
   def github_url(author, repo)
     link_to repo, "#{GITHUB}/#{author}/#{repo},", target: "_blank"
   end
+
 end
