@@ -1,6 +1,12 @@
-require 'digest/sha1'
-
 class User < ApplicationRecord
+
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :trackable,
+         :validatable,
+         :confirmable
 
   # include Auth
 
@@ -10,8 +16,6 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true,
                     format: { with: /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-za-z]{2,4}\z/}, on: :create
-
-  has_secure_password
 
   def tests_by_level(level)
     self.tests.by_level(level)

@@ -1,0 +1,42 @@
+<h2>Test #<%= @test.id %></h2>
+
+<p>
+  <strong>Title:</strong>
+  <span><%= @test.title %></span>
+</p>
+<p>
+  <strong>Level:</strong>
+  <span><%= @test.level %></span>
+</p>
+<p>
+  <strong>Category:</strong>
+  <span><%= @test.category.title %></span>
+</p>
+
+<p><strong>Questions:</strong></p>
+
+<%= link_to "Add question", new_admin_test_question_path(@test.id) %>
+
+<% if @test.questions.present? %>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50px">ID</th>
+      <th>Question text</th>
+      <th colspan="3">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+      <%= render @test.questions %>
+      <%#= render partial: 'questions/question', collection: @test.questions %>
+    </tbody>
+  </table>
+<% else %>
+  <p>There are no questions in this test.</p>
+<% end %>
+
+<p>
+  <%= link_to "Edit", edit_admin_test_path(@test) %> |
+  <%= link_to "Back", admin_tests_path %>
+</p>
