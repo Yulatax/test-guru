@@ -25,4 +25,7 @@ class User < ApplicationRecord
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
 
+  def is_admin?
+    self.is_a?(Admin)
+  end
 end
