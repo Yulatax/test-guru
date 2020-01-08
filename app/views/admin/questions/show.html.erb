@@ -1,15 +1,15 @@
-<h3>Question #<%= @question.id %></h3>
+<h3><%= t('.show_header', id: @question.id) %></h3>
 <p>
   <%= @question.body %>
 </p>
 
-<h3>Answers</h3>
-<%= link_to "New Answer", new_admin_question_answer_path(@question) %>
+<h3><%= t('.answers_title') %></h3>
+<%= link_to t('.new_answer_link'), new_admin_question_answer_path(@question) %>
 <ol>
   <%= render @question.answers %>
 </ol>
 
 <p>
-  <%= link_to "Edit", edit_admin_question_path(@question) %>
-  <%= link_to "Back", admin_test_path(@question.test_id) %>
+  <%= link_to t('.edit_link'), edit_admin_question_path(@question) %>
+  <%= link_to t('.back_link'), admin_test_path(@question.test_id) %>
 </p>
