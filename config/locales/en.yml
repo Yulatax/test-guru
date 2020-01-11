@@ -2,6 +2,8 @@ en:
   hello: "Hello world"
 
   helpers:
+    select:
+      prompt: "Please select"
     submit:
       test:
         create: "Create test"

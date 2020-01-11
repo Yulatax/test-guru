@@ -2,6 +2,8 @@ ru:
   hello: "Привет мир"
 
   helpers:
+    select:
+      prompt: "Пожалуйста, выберитие"
     submit:
       test:
         create: "Создать тест"
