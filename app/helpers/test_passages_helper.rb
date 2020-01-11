@@ -7,11 +7,11 @@ module TestPassagesHelper
   private
 
   def successful_message
-    "Congratulations! You've passed the test!"
+    t('.success')
   end
 
   def failure_message
-    "Sorry! Your result is not good enough. Try again!"
+    t('.failure')
   end
 
 end

@@ -47,8 +47,15 @@ ru:
       start_test: "Начать тест"
 
   test_passages:
+    show:
+      header: "Прохождение теста %{title}"
+      next_button: "Следующий"
     result:
       header: "Тест %{title} успешно завершен!"
+      result: "Ваш результат:"
+      tests_link: "К списку тестов"
+      success: "Поздравляем! Вы прошли тест!"
+      failure: "Извините! Вы не справились с тестом. Попытайтесь снова!"
 
   admin:
     answers:

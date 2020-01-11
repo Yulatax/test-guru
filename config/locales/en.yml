@@ -44,8 +44,15 @@ en:
       start_test: "Start"
 
   test_passages:
+    show:
+      header: "Passing the %{title} test"
+      next_button: "Next"
     result:
       header: "The %{title} was successfully completed!"
+      result: "Your result is:"
+      tests_link: "To All Tests"
+      success: "Congratulations! You've passed the test!"
+      failure: "Sorry! Your result is not good enough. Try again!"
 
   admin:
     answers:

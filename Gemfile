@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 #AUTH
 
 gem 'devise', '~> 4.0'
+gem 'devise-i18n'
 
 #LOCALIZATION
 

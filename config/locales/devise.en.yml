@@ -3,6 +3,8 @@
 en:
   devise:
     confirmations:
+      new:
+        resend_confirmation_instructions: Resend confirmation instructions
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
@@ -18,15 +20,31 @@ en:
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
       confirmation_instructions:
-        subject: "Confirmation instructions"
-      reset_password_instructions:
-        subject: "Reset password instructions"
-      unlock_instructions:
-        subject: "Unlock instructions"
+        action: Confirm my account
+        greeting: Welcome %{recipient}!
+        instruction: 'You can confirm your account email through the link below:'
+        subject: Confirmation instructions
       email_changed:
-        subject: "Email Changed"
+        greeting: Hello %{recipient}!
+        message: We're contacting you to notify you that your email has been changed to %{email}.
+        subject: Email Changed
       password_change:
-        subject: "Password Changed"
+        greeting: Hello %{recipient}!
+        message: We're contacting you to notify you that your password has been changed.
+        subject: Password Changed
+      reset_password_instructions:
+        action: Change my password
+        greeting: Hello %{recipient}!
+        instruction: Someone has requested a link to change your password. You can do this through the link below.
+        instruction_2: If you didn't request this, please ignore this email.
+        instruction_3: Your password won't change until you access the link above and create a new one.
+        subject: Reset password instructions
+      unlock_instructions:
+        action: Unlock my account
+        greeting: Hello %{recipient}!
+        instruction: 'Click the link below to unlock your account:'
+        message: Your account has been locked due to an excessive number of unsuccessful sign in attempts.
+        subject: Unlock instructions
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
@@ -37,6 +55,12 @@ en:
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
     registrations:
+      new:
+        title: Become a Guru
+        first_name: First name
+        last_name: Last name
+        email: Email
+        sign_up: Sign up
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
       signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
@@ -46,6 +70,9 @@ en:
       updated: "Your account has been updated successfully."
       updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again"
     sessions:
+      new:
+        title: "Enter the Guru Gates"
+        sign_in: "Enter"
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
@@ -53,6 +80,18 @@ en:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+  shared:
+    links:
+      back: Back
+      didn_t_receive_confirmation_instructions: Didn't receive confirmation instructions?
+      didn_t_receive_unlock_instructions: Didn't receive unlock instructions?
+      forgot_your_password: Forgot your password?
+      sign_in: Log in
+      sign_in_with_provider: Sign in with %{provider}
+      sign_up: Sign up
+    minimum_password_length:
+      one: "(%{count} character minimum)"
+      other: "(%{count} characters minimum)"
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"
