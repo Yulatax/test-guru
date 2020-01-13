@@ -1,33 +1,135 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+
+  helpers:
+    select:
+      prompt: "Please select"
+    submit:
+      test:
+        create: "Create test"
+        update: "Save changes"
+      question:
+        create: "Create question"
+        update: "Save changes"
+      answer:
+        create: "Create answer"
+        update: "Save changes"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      question:
+        body: "Question text:"
+      answer:
+        body: "Answer text:"
+        correct: "Correct"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+    flash:
+      admin_required: "You are not authorized to view this page."
+
+  tests:
+    index:
+      header: "List of tests"
+      id: "Number"
+      title: "Title"
+      level: "Level"
+      category: "Category"
+      questions_number: "Questions number"
+      actions: "Actions"
+    test:
+      start_test: "Start"
+
+  test_passages:
+    show:
+      header: "Passing the %{title} test"
+      next_button: "Next"
+    result:
+      header: "The %{title} was successfully completed!"
+      result: "Your result is:"
+      tests_link: "To All Tests"
+      success: "Congratulations! You've passed the test!"
+      failure: "Sorry! Your result is not good enough. Try again!"
+
+  admin:
+    answers:
+      answer:
+        show_link: "Show"
+        edit_link: "Edit"
+        delete_link: "Delete"
+        delete_confirm: "Are you sure?"
+      new:
+        new_answer_header: "New answer"
+        back_link: "Back"
+      edit:
+        edit_answer_header: "Edit answer"
+        back_link: "Back"
+      show:
+        title: "Question"
+        answer_label: "Answer:"
+        correct_label: "Correct:"
+        back_link: "Back"
+    questions:
+      question:
+        show_link: "Show"
+        edit_link: "Edit"
+        delete_link: "Delete"
+        delete_confirm: "Are you sure?"
+      new:
+        back_link: "Back"
+        new_question: "Create New %{title} Question"
+      edit:
+        edit_question: "Edit %{title} Question"
+        back_link: "Back"
+      show:
+        show_header: "Question #%{id}"
+        answers_title: "Answers"
+        new_answer_link: "New answer"
+        edit_link: "Edit"
+        back_link: "Back"
+    tests:
+      create:
+        success: "Test was successfully created"
+      index:
+        header: "List of tests"
+        id: "Number"
+        title: "Title"
+        level: "Level"
+        category: "Category"
+        questions_number: "Questions number"
+        actions: "Actions"
+        new_test: "New test"
+      test:
+        show_link: "Show"
+        edit_link: "Edit"
+        delete_link: "Delete"
+        delete_confirm: "Are you sure?"
+      new:
+        header: "Create New test"
+        back_link: "Back"
+      edit:
+        edit_header: "Edit %{test} test"
+        back_link: "Back"
+      show:
+        header: "Test #%{id}"
+        title: "Title:"
+        level: "Level:"
+        category: "Category:"
+        questions_title: "Questions:"
+        add_question: "Add question"
+        no_questions: "There are no questions in this test."
+        id_column: "ID"
+        question_column: "Question text"
+        actions_column: "Actions"
+        edit_link: "Edit"
+        back_link: "Back"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
+

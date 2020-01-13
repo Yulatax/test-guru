@@ -1,0 +1,137 @@
+ru:
+  hello: "Привет мир"
+
+  helpers:
+    select:
+      prompt: "Пожалуйста, выберитие"
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Сохранить изменения"
+      question:
+        create: "Создать вопрос"
+        update: "Сохранить изменения"
+      answer:
+        create: "Создать ответ"
+        update: "Сохранить изменения"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+      question:
+        body: "Текст вопроса:"
+      answer:
+        body: "Текст ответа:"
+        correct: "Верный"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+    flash:
+      admin_required: "У вас нет прав на просмотр этой страницы."
+
+
+  tests:
+    index:
+      header: "Список тестов"
+      id: "Номер"
+      title: "Название"
+      level: "Сложность"
+      category: "Категория"
+      questions_number: "Количество вопросов"
+      actions: "Действия"
+    test:
+      start_test: "Начать тест"
+
+  test_passages:
+    show:
+      header: "Прохождение теста %{title}"
+      next_button: "Следующий"
+    result:
+      header: "Тест %{title} успешно завершен!"
+      result: "Ваш результат:"
+      tests_link: "К списку тестов"
+      success: "Поздравляем! Вы прошли тест!"
+      failure: "Извините! Вы не справились с тестом. Попытайтесь снова!"
+
+  admin:
+    answers:
+      answer:
+        show_link: "Показать"
+        edit_link: "Изменить"
+        delete_link: "Удалить"
+        delete_confirm: "Вы уверены?"
+      new:
+        new_answer_header: "Новый ответ"
+        back_link: "Назад"
+      edit:
+        edit_answer_header: "Изменить ответ"
+        back_link: "Назад"
+      show:
+        title: "Вопрос"
+        answer_label: "Ответ:"
+        correct_label: "Верный:"
+        back_link: "Назад"
+    questions:
+      question:
+        show_link: "Показать"
+        edit_link: "Изменить"
+        delete_link: "Удалить"
+        delete_confirm: "Вы уверены?"
+      new:
+        back_link: "Назад"
+        new_question: "Создать новый %{title} вопрос"
+      edit:
+        back_link: "Назад"
+        edit_question: "Изменить %{title} вопрос"
+      show:
+        show_header: "Вопрос #%{id}"
+        answers_title: "Ответы"
+        new_answer_link: "Добавить ответ"
+        edit_link: "Изменить"
+        back_link: "Назад"
+    tests:
+      create:
+        success: "Тест успешно создан"
+      index:
+        header: "Список тестов"
+        id: "Номер"
+        title: "Название"
+        level: "Сложность"
+        category: "Категория"
+        questions_number: "Количество вопросов"
+        actions: "Действия"
+        new_test: "Создать тест"
+      test:
+        show_link: "Показать"
+        edit_link: "Изменить"
+        delete_link: "Удалить"
+        delete_confirm: "Вы уверены?"
+      new:
+        header: "Создать тест"
+        back_link: "Назад"
+      edit:
+        edit_header: "Изменить %{test} тест"
+        back_link: "Назад"
+      show:
+        header: "Тест #%{id}"
+        title: "Название:"
+        level: "Сложность:"
+        category: "Категория:"
+        questions_title: "Вопросы:"
+        add_question: "Добавить вопрос"
+        no_questions: "В данном тесте пока нет вопросов"
+        id_column: "Номер"
+        question_column: "Вопрос"
+        actions_column: "Действия"
+        edit_link: "Изменить"
+        back_link: "Назад"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
