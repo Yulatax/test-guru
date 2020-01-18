@@ -32,6 +32,9 @@ en:
         other: "%{count} errors detected"
     flash:
       admin_required: "You are not authorized to view this page."
+    nav:
+      sign_in: "Log in"
+      sign_up: "Sign up"
 
   tests:
     index:
