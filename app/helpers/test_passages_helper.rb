@@ -1,7 +1,7 @@
 module TestPassagesHelper
 
   def show_message(type)
-    type == 'success'? successful_message : failure_message
+    type == 'text-success'? successful_message : failure_message
   end
 
   private
