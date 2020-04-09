@@ -24,7 +24,7 @@ class TestPassage < ApplicationRecord
   end
 
   def success?
-    calculate_score >= SUCCESS_SCORE ? 'success' : 'failure'
+    calculate_score >= SUCCESS_SCORE ? 'text-success' : 'text-danger'
   end
 
   def current_question_number

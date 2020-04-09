@@ -1,6 +1,6 @@
-<tr>
+<tr class="text-center">
   <td><%= question.id %></td>
-  <td><%= question.body %></td>
+  <td class="text-left"><%= question.body %></td>
   <td><%= link_to t('.show_link'), admin_question_path(question) %></td>
   <td><%= link_to t('.edit_link'), edit_admin_question_path(question) %></td>
   <td><%= link_to t('.delete_link'),

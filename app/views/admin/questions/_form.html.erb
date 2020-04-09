@@ -2,11 +2,11 @@
 
   <%= render 'shared/errors', resource: @question %>
 
-  <p>
+  <p class="form-group">
     <%= form.label :body %><br>
-    <%= form.text_field :body, id: :question_body %>
+    <%= form.text_field :body, id: :question_body, class: 'form-control'%>
   </p>
   <p>
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-secondary'%>
   </p>
 <% end %>

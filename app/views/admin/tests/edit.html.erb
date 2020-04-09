@@ -1,4 +1,8 @@
-<h1><%= t('.edit_header', test: @test.title) %></h1>
+<h4 class="text-info my-3"><%= t('.edit_header', test: @test.title) %></h4>
 
-<%= render 'form' %>
-<%= link_to t('.back_link'), admin_tests_path %>
+<div class="row">
+  <div class="col-6">
+    <%= render 'form' %>
+    <%= link_to t('.back_link'), admin_tests_path %>
+  </div>
+</div>

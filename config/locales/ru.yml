@@ -34,7 +34,9 @@ ru:
         other: "Обнаружено %{count} ошибки"
     flash:
       admin_required: "У вас нет прав на просмотр этой страницы."
-
+    nav:
+      sign_in: "Войти"
+      sign_up: "Регистрация"
 
   tests:
     index:
