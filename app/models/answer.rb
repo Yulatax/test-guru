@@ -9,6 +9,6 @@ class Answer < ApplicationRecord
   private
 
   def answers_limit
-    errors.add(:limit, 'no more then 4 answers per question') if self.question.answers.count >= 4
+    errors.add(:limit, 'no more then 4 answers per question') if self.question.answers.count > 4
   end
 end

@@ -1,6 +1,6 @@
-<h1><%= t('.header', title: @test_passage.test.title) %></h1>
+<h5 class="text-info my-5"><%= t('.header', title: @test_passage.test.title) %></h5>
 
-<h3><%= t('.result') %> <span class=<%= @class %>><%= @score %>%</span></h3>
-<h4><%= show_message(@class) %></h4>
+<h5><%= t('.result') %> <span class=<%= @class %>><%= @score %>%</span></h5>
+<h5><%= show_message(@class) %></h5>
 
-<p><%= link_to t('.tests_link'), tests_path %></p>
+<p class="py-5"><%= link_to t('.tests_link'), tests_path, :class=>'text-primary' %></p>
