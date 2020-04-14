@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :authorized_tests, class_name: 'Test', foreign_key: 'author_id'
+  has_many :gists, dependent: :destroy
 
   validates :email, uniqueness: true,
                     format: { with: /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-za-z]{2,4}\z/}, on: :create
