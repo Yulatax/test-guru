@@ -11,6 +11,10 @@ class GistQuestionService
     @client.create_gists(gist_params)
   end
 
+  def success?
+    @client.octokit_client.last_response.status == 201 ? true : false
+  end
+
   private
 
   def gist_params
