@@ -58,6 +58,10 @@ en:
       tests_link: "To All Tests"
       success: "Congratulations! You've passed the test!"
       failure: "Sorry! Your result is not good enough. Try again!"
+    gist:
+      success: "Gist %{link} saved successfully!"
+      failure: "There was an error during saving Gist"
+      description: "A question about %{title} from TestGuru"
 
   admin:
     answers:
@@ -130,6 +134,14 @@ en:
         question_column: "Question text"
         actions_column: "Actions"
         edit_link: "Edit"
+        back_link: "Back"
+    gists:
+      index:
+        header: "Gists"
+        id: "Number"
+        question: "Question"
+        url: "URL"
+        email: "Email"
         back_link: "Back"
 
   tests_mailer:

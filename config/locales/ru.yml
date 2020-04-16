@@ -60,6 +60,11 @@ ru:
       tests_link: "К списку тестов"
       success: "Поздравляем! Вы прошли тест!"
       failure: "Извините! Вы не справились с тестом. Попытайтесь снова!"
+    gist:
+      success: "Gist %{link} успешно сохранен!"
+      failure: "Во время сохранения Gist произошла ошибка"
+      description: "Вопрос на тему %{title} от TestGuru"
+
 
   admin:
     answers:
@@ -132,6 +137,14 @@ ru:
         question_column: "Вопрос"
         actions_column: "Действия"
         edit_link: "Изменить"
+        back_link: "Назад"
+    gists:
+      index:
+        header: "Gists"
+        id: "Номер"
+        question: "Вопрос"
+        url: "URL"
+        email: "Email"
         back_link: "Назад"
 
   tests_mailer:

@@ -1,0 +1,19 @@
+<h4 class="text-info my-3"><%= t('.header') %></h4>
+
+<table class="table table-striped">
+  <thead>
+  <tr class="text-center">
+    <th style="width: 50px"><%= t('.id') %></th>
+    <th><%= t('.question') %></th>
+    <th><%= t('.url') %></th>
+    <th><%= t('.email') %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render @gists %>
+  </tbody>
+</table>
+
+<p class="py-3">
+  <%= link_to t('.back_link'), admin_tests_path %>
+</p>
