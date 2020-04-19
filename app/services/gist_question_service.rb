@@ -1,21 +1,29 @@
+require 'octokit'
+
 class GistQuestionService
+
+  ACCESS_TOKEN = ENV['GITHUB_ACCESS_TOKEN']
 
   def initialize(question, client: nil)
     @question = question
     @test = @question.test
     #@client = client || GitHubClient.new
-    @client = client || OctokitClient.new
+    @client = client || setup_client
   end
 
   def call
-    @client.create_gists(gist_params)
+    @client.create_gist(gist_params)
   end
 
   def success?
-    @client.octokit_client.last_response.status == 201 ? true : false
+    @client.last_response.status == 201 ? true : false
   end
 
   private
+
+  def setup_client
+    Octokit::Client.new(:access_token => ACCESS_TOKEN)
+  end
 
   def gist_params
     {

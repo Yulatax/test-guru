@@ -4,7 +4,11 @@
   <thead>
     <tr class="text-center">
       <th><%= t('.id') %></th>
-      <th><%= t('.title') %></th>
+      <th class="sort-by-title pointer">
+        <%= t('.title') %>
+        <%= octicon 'arrow-up', class: 'text-success hide' %>
+        <%= octicon 'arrow-down', class: 'text-success hide' %>
+      </th>
       <th><%= t('.level') %></th>
       <th><%= t('.category') %></th>
       <th><%= t('.questions_number') %></th>
