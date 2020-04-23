@@ -5,6 +5,8 @@
   <%= link_to "Gists", admin_gists_path, :class=>'btn btn-secondary' %>
 </p>
 
+<%= render 'shared/errors', resource: @test %>
+
 <table class="table table-striped">
   <thead>
     <tr class="text-center">
