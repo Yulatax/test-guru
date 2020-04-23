@@ -18,4 +18,10 @@
   <p><%= form.submit t('.next_button'), :class=>'btn btn-secondary'%></p>
 <% end %>
 
+<div class="progress-wrapper"
+     data-question-now = "<%= @number %>"
+     data-questions-count = "<%= @test_passage.test.questions.count %>"
+>
+</div>
+
 <h6><%= @number %> / <%= @test_passage.test.questions.count %></h6>

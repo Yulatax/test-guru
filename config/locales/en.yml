@@ -111,6 +111,8 @@ en:
         questions_number: "Questions number"
         actions: "Actions"
         new_test: "New test"
+      form_inline:
+        submit: "OK"
       test:
         show_link: "Show"
         edit_link: "Edit"

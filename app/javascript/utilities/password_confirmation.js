@@ -14,21 +14,18 @@ function checkPasswordMatch() {
     let issue_opened = document.querySelector('.octicon-issue-opened');
     let issue_closed = document.querySelector('.octicon-issue-closed');
 
-    if (password1 && password2) {
-        let res = compareStrings(password1, password2);
-        if (!res) {
-            issue_opened.classList.remove('hide');
-            issue_closed.classList.add('hide');
-        } else {
-            issue_opened.classList.add('hide');
-            issue_closed.classList.remove('hide');
-        }
-    } else {
+    if (!password1 || !password2) {
         issue_opened.classList.add('hide');
         issue_closed.classList.add('hide');
+        return;
     }
-}
 
-function compareStrings(str1, str2) {
-    return str1 === str2;
+    let res = password1 === password2;
+    if (!res) {
+        issue_opened.classList.remove('hide');
+        issue_closed.classList.add('hide');
+    } else {
+        issue_opened.classList.add('hide');
+        issue_closed.classList.remove('hide');
+    }
 }

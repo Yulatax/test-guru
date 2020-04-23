@@ -114,6 +114,8 @@ ru:
         questions_number: "Количество вопросов"
         actions: "Действия"
         new_test: "Создать тест"
+      form_inline:
+        submit: "OK"
       test:
         show_link: "Показать"
         edit_link: "Изменить"
