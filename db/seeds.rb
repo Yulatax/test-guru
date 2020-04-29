@@ -13,9 +13,6 @@ if admin.nil?
       password: '123456',
       password_confirmation: '123456'
   )
-else
-  return if admin.is_admin?
-  admin.type = 'Admin'
 end
 
 p admin
@@ -38,7 +35,7 @@ end
 
 questions = Question.all
 questions.each do |question|
-  answers_number = Faker::Number.between(from: 3, to: 5)
+  answers_number = Faker::Number.between(from: 3, to: 4)
   answers_number.times do
     Answer.create(body: Faker::Lorem.sentence, correct: Faker::Boolean.boolean(true_ratio: 0.5), question_id: question.id)
   end
