@@ -3,18 +3,22 @@ require 'faker'
 Category.create([{title: 'HTML'}, {title: 'CSS'},
                  {title: 'JavaScript'}, {title: 'jQuery'}, {title: 'Ruby'}])
 
-admin = Admin.create(
-    first_name: 'Admin',
-    last_name: 'Admin',
-    email: 'admin@test-guru.com',
-    password: '123456',
-    password_confirmation: '123456'
-)
+admin = User.find_by(email: 'yulatax@gmail.com')
+
+if admin.nil?
+  admin = Admin.create(
+      first_name: 'Admin',
+      last_name: 'Admin',
+      email: 'admin@test-guru.com',
+      password: '123456',
+      password_confirmation: '123456'
+  )
+else
+  return if admin.is_admin?
+  admin.type = 'Admin'
+end
 
 p admin
-p admin.is_admin?
-
-return unless admin.is_admin?
 
 Test.create([
     {title: 'HTML Test1', category_id: 1, author_id: admin.id},
