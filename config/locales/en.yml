@@ -52,6 +52,8 @@ en:
     show:
       header: "Passing the %{title} test"
       next_button: "Next"
+    update:
+      empty_answer: "Choose answer, please"
     result:
       header: "The %{title} was successfully completed!"
       result: "Your result is:"
@@ -59,6 +61,7 @@ en:
       success: "Congratulations! You've passed the test!"
       failure: "Sorry! Your result is not good enough. Try again!"
     gist:
+      present: "Gist for this question already exists!"
       success: "Gist %{link} saved successfully!"
       failure: "There was an error during saving Gist"
       description: "A question about %{title} from TestGuru"

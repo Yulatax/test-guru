@@ -14,6 +14,11 @@ class TestPassagesController < ApplicationController
   end
 
   def update
+    if params[:answer_ids].nil?
+      redirect_to @test_passage, alert: t('.empty_answer')
+      return
+    end
+
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
@@ -25,6 +30,11 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
+    if gist_present?
+      redirect_to @test_passage, alert: t('.present')
+      return
+    end
+
     gist_service = GistQuestionService.new(@test_passage.current_question)
     res = gist_service.call
 
@@ -50,5 +60,9 @@ class TestPassagesController < ApplicationController
 
   def create_gist(url)
     current_user.gists.create(url: url, question: @test_passage.current_question)
+  end
+
+  def gist_present?
+    Gist.find_by(user_id: current_user.id, question_id: @test_passage.current_question.id).present?
   end
 end

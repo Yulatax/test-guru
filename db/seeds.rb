@@ -3,17 +3,18 @@ require 'faker'
 Category.create([{title: 'HTML'}, {title: 'CSS'},
                  {title: 'JavaScript'}, {title: 'jQuery'}, {title: 'Ruby'}])
 
-# admin = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name,
-#             email: Faker::Internet.unique.email, admin: true)
+admin = Admin.create(
+    first_name: 'Admin',
+    last_name: 'Admin',
+    email: 'admin@test-guru.com',
+    password: '123456',
+    password_confirmation: '123456'
+)
 
-admin = User.first
-admin.admin = true
 p admin
+p admin.is_admin?
 
-# 5.times do
-#   User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name,
-#               email: Faker::Internet.unique.email, admin: false)
-# end
+return unless admin.is_admin?
 
 Test.create([
     {title: 'HTML Test1', category_id: 1, author_id: admin.id},
@@ -40,7 +41,7 @@ questions.each do |question|
 end
 
 p "Created #{Category.count} categories"
-p "Created #{User.count} users"
+# p "Created #{User.count} users"
 p "Created #{Test.count} tests"
 p "Created #{Question.count} questions"
 p "Created #{Answer.count} answers"
