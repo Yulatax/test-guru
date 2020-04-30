@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   root to: 'tests#index'
 
+  get 'contact_us', to: "contact#contact_us"
+  post 'send_form', to: "contact#send_form"
+
   devise_for :users, path: :gurus, path_names: {sign_in: :login, sign_out: :logout}
 
   resources :tests, only: :index do

@@ -68,6 +68,13 @@ ru:
       failure: "Во время сохранения Gist произошла ошибка"
       description: "Вопрос на тему %{title} от TestGuru"
 
+  contact:
+    contact_us:
+      header: "Связаться с нами"
+      name: "Имя"
+      email: "Email"
+      message: "Сообщение"
+      submit: "Отправить"
 
   admin:
     answers:

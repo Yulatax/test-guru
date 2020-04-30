@@ -1,0 +1,30 @@
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-8 mb-5">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="text-info"><%= t('.header') %></h4>
+      </div>
+      <div class="card-body">
+        <%= form_with url: send_form_path, method: :post do |f| %>
+          <div class="form-group">
+            <p>
+              <%= f.label :name, t('.name')%>
+              <%= f.text_field :name, class: 'form-control'%>
+            </p>
+            <p>
+              <%= f.label :email, t('.email') %>
+              <%= f.email_field :email, class: 'form-control', placeholder: 'name@example.com' %>
+            </p>
+            <p>
+              <%= f.label :message, t('.message') %>
+              <%= f.text_area :message, class: 'form-control' %>
+            </p>
+            <p>
+              <%= f.submit t('.submit'), class: 'btn btn-secondary'%>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

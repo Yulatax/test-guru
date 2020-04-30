@@ -66,6 +66,14 @@ en:
       failure: "There was an error during saving Gist"
       description: "A question about %{title} from TestGuru"
 
+  contact:
+    contact_us:
+      header: "Contact Us"
+      name: "Name"
+      email: "Email"
+      message: "Message"
+      submit: "Send"
+
   admin:
     answers:
       answer:
