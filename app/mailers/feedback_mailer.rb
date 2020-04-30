@@ -8,6 +8,6 @@ class FeedbackMailer < ApplicationMailer
 
     admin_email = Admin.first.email
 
-    mail to: [admin_email, subject: 'Contact us mailer']
+    mail to: admin_email, subject: 'Contact us mailer'
   end
 end
