@@ -49,6 +49,8 @@ ru:
       actions: "Действия"
     test:
       start_test: "Начать тест"
+    start:
+      empty: "Данный тест не содержит вопросов"
 
   test_passages:
     show:
@@ -63,7 +65,7 @@ ru:
       success: "Поздравляем! Вы прошли тест!"
       failure: "Извините! Вы не справились с тестом. Попытайтесь снова!"
     gist:
-      present: "Gist для данного вопроса уже существует!"
+      present: "Gist для данного вопроса уже существует! %{link}"
       success: "Gist %{link} успешно сохранен!"
       failure: "Во время сохранения Gist произошла ошибка"
       description: "Вопрос на тему %{title} от TestGuru"
