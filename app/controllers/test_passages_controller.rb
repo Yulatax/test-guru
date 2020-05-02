@@ -3,6 +3,7 @@ class TestPassagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_test_passage, only: %i[show update result gist]
   before_action :set_current_question_number, only: :show
+  before_action :set_gist, only: :gist
 
   def show
 
@@ -14,6 +15,11 @@ class TestPassagesController < ApplicationController
   end
 
   def update
+    if params[:answer_ids].nil?
+      redirect_to @test_passage, alert: t('.empty_answer')
+      return
+    end
+
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
@@ -25,11 +31,16 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
+    if @gist.present?
+      redirect_to @test_passage, notice: t('.present', link: @gist.url)
+      return
+    end
+
     gist_service = GistQuestionService.new(@test_passage.current_question)
     res = gist_service.call
 
     flash_options = if gist_service.success?
-                      create_gist(res[:url])
+                      create_gist(res[:html_url])
                       { notice: t('.success', link: res[:html_url]) }
                     else
                       { alert: t('.failure') }
@@ -50,5 +61,9 @@ class TestPassagesController < ApplicationController
 
   def create_gist(url)
     current_user.gists.create(url: url, question: @test_passage.current_question)
+  end
+
+  def set_gist
+    @gist = Gist.find_by(user_id: current_user.id, question_id: @test_passage.current_question.id)
   end
 end

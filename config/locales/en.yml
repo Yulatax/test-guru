@@ -47,11 +47,15 @@ en:
       actions: "Actions"
     test:
       start_test: "Start"
+    start:
+      empty: "There are no questions in this test"
 
   test_passages:
     show:
       header: "Passing the %{title} test"
       next_button: "Next"
+    update:
+      empty_answer: "Choose answer, please"
     result:
       header: "The %{title} was successfully completed!"
       result: "Your result is:"
@@ -59,9 +63,18 @@ en:
       success: "Congratulations! You've passed the test!"
       failure: "Sorry! Your result is not good enough. Try again!"
     gist:
+      present: "Gist for this question already exists! %{link}"
       success: "Gist %{link} saved successfully!"
       failure: "There was an error during saving Gist"
       description: "A question about %{title} from TestGuru"
+
+  contact:
+    contact_us:
+      header: "Contact Us"
+      name: "Name"
+      email: "Email"
+      message: "Message"
+      submit: "Send"
 
   admin:
     answers:

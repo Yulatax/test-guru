@@ -3,17 +3,19 @@ require 'faker'
 Category.create([{title: 'HTML'}, {title: 'CSS'},
                  {title: 'JavaScript'}, {title: 'jQuery'}, {title: 'Ruby'}])
 
-# admin = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name,
-#             email: Faker::Internet.unique.email, admin: true)
+admin = User.find_by(email: 'yulatax@gmail.com')
 
-admin = User.first
-admin.admin = true
+if admin.nil?
+  admin = Admin.create(
+      first_name: 'Admin',
+      last_name: 'Admin',
+      email: 'admin@test-guru.com',
+      password: '123456',
+      password_confirmation: '123456'
+  )
+end
+
 p admin
-
-# 5.times do
-#   User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name,
-#               email: Faker::Internet.unique.email, admin: false)
-# end
 
 Test.create([
     {title: 'HTML Test1', category_id: 1, author_id: admin.id},
@@ -33,14 +35,14 @@ end
 
 questions = Question.all
 questions.each do |question|
-  answers_number = Faker::Number.between(from: 3, to: 5)
+  answers_number = Faker::Number.between(from: 3, to: 4)
   answers_number.times do
     Answer.create(body: Faker::Lorem.sentence, correct: Faker::Boolean.boolean(true_ratio: 0.5), question_id: question.id)
   end
 end
 
 p "Created #{Category.count} categories"
-p "Created #{User.count} users"
+# p "Created #{User.count} users"
 p "Created #{Test.count} tests"
 p "Created #{Question.count} questions"
 p "Created #{Answer.count} answers"

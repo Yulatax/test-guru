@@ -14,8 +14,9 @@ function addProgressBar(wrapper) {
 
 function createProgressElement(current, count) {
     let div = document.createElement('div');
+    div.classList.add('progress-bar');
     div.style.height = '100%';
-    div.style.width = 100 * current / count + '%';
+    div.style.width = 100 * (current-1) / count + '%';
     div.style.backgroundColor = 'orange';
     return div;
 }

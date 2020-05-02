@@ -10,8 +10,8 @@ class User < ApplicationRecord
 
   # include Auth
 
-  has_many :test_passages
-  has_many :tests, through: :test_passages
+  has_many :test_passages, dependent: :destroy
+  has_many :tests, through: :test_passages, dependent: :destroy
   has_many :authorized_tests, class_name: 'Test', foreign_key: 'author_id'
   has_many :gists, dependent: :destroy
 

@@ -49,11 +49,15 @@ ru:
       actions: "Действия"
     test:
       start_test: "Начать тест"
+    start:
+      empty: "Данный тест не содержит вопросов"
 
   test_passages:
     show:
       header: "Прохождение теста %{title}"
       next_button: "Следующий"
+    update:
+      empty_answer: "Выберите, пожалуйста, ответ"
     result:
       header: "Тест %{title} успешно завершен!"
       result: "Ваш результат:"
@@ -61,10 +65,18 @@ ru:
       success: "Поздравляем! Вы прошли тест!"
       failure: "Извините! Вы не справились с тестом. Попытайтесь снова!"
     gist:
+      present: "Gist для данного вопроса уже существует! %{link}"
       success: "Gist %{link} успешно сохранен!"
       failure: "Во время сохранения Gist произошла ошибка"
       description: "Вопрос на тему %{title} от TestGuru"
 
+  contact:
+    contact_us:
+      header: "Связаться с нами"
+      name: "Имя"
+      email: "Email"
+      message: "Сообщение"
+      submit: "Отправить"
 
   admin:
     answers:
