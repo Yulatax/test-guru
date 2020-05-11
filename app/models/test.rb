@@ -19,7 +19,7 @@ class Test < ApplicationRecord
   class << self
     def tests_by_category(category)
       # Category.by_name(category).tests.ordered.pluck(:title)
-      Test.joins(:category).where(categories: {title: category}).order(title: :desc).pluck(:title)
+      Test.joins(:category).where(categories: {title: category}).order(title: :desc)
     end
   end
 end

@@ -1,0 +1,19 @@
+<h4 class="text-info my-3"><%= t('.rewards_header') %></h4>
+
+<table class="table table-striped">
+  <thead>
+    <tr class="text-center">
+      <th><%= t('.title') %></th>
+      <th><%= t('.badge') %></th>
+      <th><%= t('.rule') %></th>
+      <th><%= t('.count') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @badges %>
+  </tbody>
+</table>
+
+<p class="py-3">
+  <%= link_to t('.tests_link'), root_path %>
+</p>

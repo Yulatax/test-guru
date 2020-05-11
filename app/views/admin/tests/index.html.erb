@@ -3,6 +3,7 @@
 <p>
   <%= link_to t('.new_test'), new_admin_test_path, :class=>'btn btn-secondary' %>
   <%= link_to "Gists", admin_gists_path, :class=>'btn btn-secondary' %>
+  <%= link_to "Badges", admin_badges_path, :class=>'btn btn-secondary' %>
 </p>
 
 <%= render 'shared/errors', resource: @test %>

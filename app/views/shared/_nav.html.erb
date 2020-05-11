@@ -2,9 +2,10 @@
 
   <div>
     <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
-    <%= link_to 'Contact Us', contact_us_path, class: 'navbar-text mx-5' %>
+    <%= link_to 'Rewards', badges_path, class: 'navbar-text ml-5' %>
+    <%= link_to 'Contact Us', contact_us_path, class: 'navbar-text ml-5' %>
     <% if user_signed_in? && current_user.is_admin? %>
-      <%= link_to 'To Admin Panel', admin_tests_path, class: 'navbar-text' %>
+      <%= link_to 'To Admin Panel', admin_tests_path, class: 'navbar-text ml-5' %>
     <% end %>
   </div>
 

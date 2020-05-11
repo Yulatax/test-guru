@@ -1,0 +1,12 @@
+<tr class="text-center">
+  <td class="align-middle"><%= badge.title %></td>
+  <td class="align-middle">
+    <img
+      alt="Badge"
+      class="badge"
+      src=<%= "#{badge.file_name}" %>
+    >
+  </td>
+  <td class="align-middle"><%= badge.rule %></td>
+  <td class="align-middle"><%= badge.count(current_user) %></td>
+</tr>

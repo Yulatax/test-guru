@@ -14,6 +14,9 @@ ru:
       answer:
         create: "Создать ответ"
         update: "Сохранить изменения"
+      badge:
+        create: "Создать награду"
+        update: "Сохранить изменения"
     label:
       test:
         title: "Название"
@@ -24,6 +27,10 @@ ru:
       answer:
         body: "Текст ответа:"
         correct: "Верный"
+      badge:
+        title: "Название"
+        file: "Имя файла"
+        rule: "Правило"
 
   shared:
     errors:
@@ -64,6 +71,7 @@ ru:
       tests_link: "К списку тестов"
       success: "Поздравляем! Вы прошли тест!"
       failure: "Извините! Вы не справились с тестом. Попытайтесь снова!"
+      message: "Вы получили новые %{badges} награды!"
     gist:
       present: "Gist для данного вопроса уже существует! %{link}"
       success: "Gist %{link} успешно сохранен!"
@@ -77,6 +85,15 @@ ru:
       email: "Email"
       message: "Сообщение"
       submit: "Отправить"
+
+  badges:
+    index:
+      rewards_header: "Награды"
+      title: "Название"
+      badge: "Награда"
+      rule: "Правило"
+      count: "Количество"
+      tests_link: "Список тестов"
 
   admin:
     answers:
@@ -160,6 +177,35 @@ ru:
         url: "URL"
         email: "Email"
         back_link: "Назад"
+    badges:
+      index:
+        header: "Награды"
+        id: "Номер"
+        title: "Название"
+        file_name: "Имя файла"
+        rule: "Правило"
+        actions: "Действия"
+        new_badge: "Новая награда"
+        tests_link: "К списку тестов"
+      badge:
+        show_link: "Показать"
+        edit_link: "Изменить"
+        delete_link: "Удалить"
+        delete_confirm: "Вы уверены?"
+      show:
+        header: "Награда %{title}"
+        file: "Имя файла"
+        rule: "Правило"
+        edit_link: "Изменить"
+        back_link: "К списку наград"
+      new:
+        header: "Создать новую награду"
+        back_link: "К списку наград"
+      create:
+        success: "Награда успешно создана"
+      edit:
+        edit_header: "Изменить %{badge} награду"
+        back_link: "К списку наград"
 
   tests_mailer:
     completed_test:

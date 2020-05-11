@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages, dependent: :destroy
   has_many :authorized_tests, class_name: 'Test', foreign_key: 'author_id'
   has_many :gists, dependent: :destroy
+  has_many :rewardings, dependent: :destroy
+  has_many :badges, through: :rewardings, dependent: :destroy
 
   validates :email, uniqueness: true,
                     format: { with: /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-za-z]{2,4}\z/}, on: :create
@@ -28,5 +30,9 @@ class User < ApplicationRecord
 
   def is_admin?
     self.is_a?(Admin)
+  end
+
+  def test_passage_count(id)
+    self.test_passages.where(test_id: id).count
   end
 end

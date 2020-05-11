@@ -1,0 +1,8 @@
+<h4 class="text-info my-3"><%= t('.edit_header', badge: @badge.title) %></h4>
+
+<div class="row">
+  <div class="col">
+    <%= render 'form' %>
+    <%= link_to t('.back_link'), admin_badges_path %>
+  </div>
+</div>
