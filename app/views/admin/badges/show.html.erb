@@ -1,0 +1,15 @@
+<h4 class="text-info my-3"><%= t('.header', title: @badge.title) %></h4>
+
+<p>
+  <strong><%= t('.file') %></strong>
+  <span><%= @badge.file_name %></span>
+</p>
+<p>
+  <strong><%= t('.rule') %></strong>
+  <span><%= @badge.rule %></span>
+</p>
+
+<p class="py-3">
+  <%= link_to t('.edit_link'), edit_admin_badge_path(@badge) %> |
+  <%= link_to t('.back_link'), admin_badges_path %>
+</p>

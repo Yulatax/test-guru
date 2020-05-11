@@ -14,6 +14,9 @@ en:
       answer:
         create: "Create answer"
         update: "Save changes"
+      badge:
+        create: "Create badge"
+        update: "Save changes"
     label:
       test:
         title: "Title"
@@ -24,6 +27,10 @@ en:
       answer:
         body: "Answer text:"
         correct: "Correct"
+      badge:
+        title: "Title"
+        file: "File name"
+        rule: "Rule"
 
   shared:
     errors:
@@ -62,6 +69,7 @@ en:
       tests_link: "To All Tests"
       success: "Congratulations! You've passed the test!"
       failure: "Sorry! Your result is not good enough. Try again!"
+      message: "You got new %{badges} badges!"
     gist:
       present: "Gist for this question already exists! %{link}"
       success: "Gist %{link} saved successfully!"
@@ -75,6 +83,15 @@ en:
       email: "Email"
       message: "Message"
       submit: "Send"
+
+  badges:
+    index:
+      rewards_header: "Rewards"
+      title: "Title"
+      badge: "Badge"
+      rule: "Rule"
+      count: "Count"
+      tests_link: "To tests"
 
   admin:
     answers:
@@ -158,6 +175,35 @@ en:
         url: "URL"
         email: "Email"
         back_link: "Back"
+    badges:
+      index:
+        header: "Badges"
+        id: "Number"
+        title: "Title"
+        file_name: "File name"
+        rule: "Rule"
+        actions: "Actions"
+        new_badge: "New badge"
+        tests_link: "To tests"
+      badge:
+        show_link: "Show"
+        edit_link: "Edit"
+        delete_link: "Delete"
+        delete_confirm: "Are you sure?"
+      show:
+        header: "Badge %{title}"
+        file: "File name"
+        rule: "Rule"
+        edit_link: "Edit"
+        back_link: "To all badges"
+      new:
+        header: "Create New Badge"
+        back_link: "To all badges"
+      create:
+        success: "Badge was successfully created"
+      edit:
+        edit_header: "Edit %{badge} badge"
+        back_link: "To all badges"
 
   tests_mailer:
     completed_test:

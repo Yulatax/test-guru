@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col col-md-6">
+    <%= form_with model: [:admin, @badge], local: true do |form| %>
+      <%= render 'shared/errors', resource: @badge %>
+
+      <p class="form-group">
+        <%= form.label :title %><br>
+        <%= form.text_field :title, id: :badge_title, class: 'form-control' %>
+      </p>
+
+      <p class="form-group">
+        <%= form.label :file_name %><br>
+        <%= form.text_field :file_name, id: :badge_file, class: 'form-control' %>
+      </p>
+
+      <p class="form-group">
+        <%= form.label :rule %><br>
+        <%= form.text_field :rule, id: :badge_rule, class: 'form-control' %>
+      </p>
+
+      <p><%= form.submit class: 'btn btn-secondary'%></p>
+
+    <% end %>
+  </div>
+</div>

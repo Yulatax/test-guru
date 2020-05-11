@@ -11,7 +11,15 @@ class TestPassagesController < ApplicationController
 
   def result
     @score = @test_passage.calculate_score
-    @class = @test_passage.success?
+    @class = @test_passage.set_class
+    @rewards = @test_passage.rewarding
+
+    p @rewards
+    unless @rewards.any?
+      return
+    end
+
+    show_notice(@rewards)
   end
 
   def update
@@ -65,5 +73,16 @@ class TestPassagesController < ApplicationController
 
   def set_gist
     @gist = Gist.find_by(user_id: current_user.id, question_id: @test_passage.current_question.id)
+  end
+
+  def show_notice(rewards)
+    str = ''
+    rewards.each do |reward|
+      unless reward.nil?
+        str += " '#{reward.badge.title}'"
+      end
+    end
+    # flash.now[:notice] = "You got new #{str} badge!"
+    flash.now[:notice] = t('.message', badges: str)
   end
 end

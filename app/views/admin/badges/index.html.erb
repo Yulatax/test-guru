@@ -1,0 +1,24 @@
+<h4 class="text-info my-3"><%= t('.header') %></h4>
+
+<p>
+  <%= link_to t('.new_badge'), new_admin_badge_path, :class=>'btn btn-secondary' %>
+</p>
+
+<table class="table table-striped">
+  <thead>
+  <tr class="text-center">
+    <th style="width: 50px"><%= t('.id') %></th>
+    <th><%= t('.title') %></th>
+    <th><%= t('.file_name') %></th>
+    <th><%= t('.rule') %></th>
+    <th colspan="3"><%= t('.actions') %></th>
+  </tr>
+  </thead>
+  <tbody>
+    <%= render @badges %>
+  </tbody>
+</table>
+
+<p class="py-3">
+  <%= link_to t('.tests_link'), admin_tests_path %>
+</p>
